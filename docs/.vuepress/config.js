@@ -11,36 +11,19 @@ module.exports = {
   themeConfig: {
     type: "blog",
     logo: "/avatar.jpg",
-    author: "OrangeWind",
+    author: "orangeWind",
     authorAvatar: "/avatar.jpg",
     subSiderbar: "auto",
     nav: [
       { text: "首页", link: "/" },
       {
-        text: "Shark Xu 的博客",
+        text: "OrangeWind 的博客",
         items: [
           { text: "掘金", link: "https://juejin.cn/user/233526039432445" },
           { text: "Github", link: "https://github.com/Xusssyyy" }
         ]
       }
     ],
-    // sidebar: [
-    //   {
-    //     title: "欢迎学习",
-    //     path: "/",
-    //     collapsable: false,  // 是否折叠
-    //     children: [{ title: "博客简介", path: "/" }],
-    //   },
-    //   {
-    //     title: "基础篇",
-    //     path: "/blogs/1",
-    //     collapsable: true,
-    //     children: [
-    //       { title: "第一篇", path: "/blogs/1" },
-    //       { title: "第二篇", path: "/blogs/2" },
-    //     ]
-    //   } 
-    // ]
     // 博客配置
     blogConfig: {
       category: {
@@ -92,7 +75,7 @@ module.exports = {
     [
       '@vuepress-reco/vuepress-plugin-kan-ban-niang',
       {
-        theme: ["blackCat"],
+        theme: ["z16","izumi","koharu","shizuku","miku", "hijiki", "tororo"],
         clean: false,
         info: 'https://github.com/mengqiuleo',
         messages: {
@@ -123,13 +106,13 @@ module.exports = {
       }
     ],
     // 鼠标点击效果
-    [
-      "cursor-effects",
-      {
-        size: 2, // size of the particle, default: 2
-        shape: "circle", // ['star' | 'circle'], // shape of the particle, default: 'star'
-        zIndex: 999999999, // z-index property of the canvas, default: 999999999
-      },
-    ],
+    // [
+    //   "cursor-effects",
+    //   {
+    //     size: 2, // size of the particle, default: 2
+    //     shape: "star", // ['star' | 'circle'], // shape of the particle, default: 'star'
+    //     zIndex: 999999999, // z-index property of the canvas, default: 999999999
+    //   },
+    // ],
  ]
 }
