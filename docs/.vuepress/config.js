@@ -2,6 +2,7 @@ module.exports = {
   title: "OrangeWind的博客",
   description: '博客 学习 面试 生活',
   theme: "reco",
+  base: '/orangewind/',
   locales: {
     "/": {
       lang: "zh-CN",
