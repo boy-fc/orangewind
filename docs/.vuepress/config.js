@@ -19,8 +19,8 @@ module.exports = {
       {
         text: "OrangeWind 的博客",
         items: [
-          { text: "掘金", link: "https://juejin.cn/user/233526039432445" },
-          { text: "Github", link: "https://github.com/Xusssyyy" }
+          { text: "掘金", link: "https://juejin.cn/user/4231342834844567" },
+          { text: "Github", link: "https://github.com/boy-fc" }
         ]
       }
     ],
@@ -75,7 +75,7 @@ module.exports = {
     [
       '@vuepress-reco/vuepress-plugin-kan-ban-niang',
       {
-        theme: ["z16","izumi","koharu","shizuku","miku", "hijiki", "tororo"],
+        theme: ['blackCat', 'whiteCat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi', 'shizuku', 'wanko', 'miku', 'z16'],
         clean: false,
         info: 'https://github.com/mengqiuleo',
         messages: {
