@@ -1,6 +1,7 @@
 ---
 title: Docker入门
 date: 2023-9-5
+sidebar: 'auto'
 categories:
   - 前端
 tags:
@@ -8,7 +9,7 @@ tags:
 sticky: 1
 ---
 
-### docker是什么
+## docker是什么
 
 ![](/orangewind/images/docker.png)
 
@@ -19,7 +20,7 @@ sticky: 1
 
 
 
-### docker 的用途
+## docker 的用途
 
 Docker 的主要用途，目前有三大类。
 
@@ -29,29 +30,29 @@ Docker 的主要用途，目前有三大类。
 
 
 
-### docker的基本概念
+## docker的基本概念
 
 镜像(`Image`)、容器(`Container`)与仓库(`Repository`)，这三个是`docker`中最基本也是最核心的概念。
 
-#### 镜像(Image)
+### 镜像(Image)
 
 `Docker 把应用程序及其依赖，打包在 image 文件里面。`只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。
 
-#### 容器(Container)
+### 容器(Container)
 
 `image 文件生成的容器实例，本身也是一个文件，称为容器文件。`也就是说，一旦容器生成，就会同时存在两个文件： image 文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。
 
-#### 仓库(Repository)
+### 仓库(Repository)
 
 `Docker Hub`就是Docker提供用于存储和分布镜像的官方`Docker Registry`，也是默认的`Registry`，其网址为`https://hub.docker.com`，前面我们使用`docker pull`命令便从`Docker Hub`上拉取镜像。
 
 
 
-### docker的组成与架构
+## docker的组成与架构
 
 ![](/orangewind/images/dockerServer.png)
 
-#### docker Engine
+### docker Engine
 
 `docker server`为客户端提供了容器、镜像、数据卷、网络管理等功能，其实，这些功能都是由`Docker Engine`来实现的。
 
@@ -60,3 +61,4 @@ Docker 的主要用途，目前有三大类。
 3. `REST API`：除了cli命令行接口，也可以通过`REST API`调用`docker`
 
 ![](/orangewind/images/dockerEngine.png)
+
