@@ -20,7 +20,7 @@ sticky: 1
 
 
 
-## docker 的用途
+## docker的用途
 
 Docker 的主要用途，目前有三大类。
 

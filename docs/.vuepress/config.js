@@ -20,20 +20,20 @@ module.exports = {
     },
   },
   markdown: {
-    lineNumbers: true,
-    anchor: { permalink: false }
+    lineNumbers: true, // 代码显示行号
+    anchor: { permalink: false },
   },
   themeConfig: {
     type: "blog",
     logo: "/avatar.jpg",
     author: "orangeWind",
     authorAvatar: "/avatar.jpg",
-    subSiderbar: "auto",
+    // subSiderbar: "auto",
     // 搜索设置
     search: true,
     searchMaxSuggestions: 10,
     // 自动形成侧边导航
-    sidebar: 'auto',
+    // sidebar: 'auto',
     // 最后更新时间
     lastUpdated: '最后更新时间',
     nav: [
@@ -181,6 +181,12 @@ module.exports = {
         headerAnchorSelector: '.header-anchor'
       }
     ],
+    [
+      '@vuepress/google-analytics', 
+      {
+        'ga': 'UA-284409074-0' // UA-00000000-0 填上GAID
+      }
+    ]
     // 鼠标点击效果
     // [
     //   "cursor-effects",
