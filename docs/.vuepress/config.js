@@ -59,19 +59,19 @@ module.exports = {
     },
     // 友情链接
     friendLink: [
-    {
-      title: 'vuepress-theme-reco',
-      desc: 'A simple and beautiful vuepress Blog & Doc theme.',
-      logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-      link: 'https://vuepress-theme-reco.recoluan.com'
-    },
-    {
-      title: '午后南杂',
-      desc: 'Enjoy when you can, and endure when you must.',
-      email: 'recoluan@qq.com',
-      link: 'https://www.recoluan.com'
-    }
-  ],
+      {
+        title: 'vuepress-theme-reco',
+        desc: 'A simple and beautiful vuepress Blog & Doc theme.',
+        logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+        link: 'https://vuepress-theme-reco.recoluan.com'
+      },
+      {
+        title: '午后南杂',
+        desc: 'Enjoy when you can, and endure when you must.',
+        email: 'recoluan@qq.com',
+        link: 'https://www.recoluan.com'
+      }
+    ],
   },
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
@@ -173,16 +173,6 @@ module.exports = {
         }
       }
     ],
-    // 图片缩放
-    [ 
-      '@vuepress/medium-zoom',
-      {
-        selector: 'img.zoom-custom-imgs',
-        options: {
-          margin: 16
-        }
-      }
-    ],
     [ 
       "vuepress-plugin-nuggets-style-copy", 
       {
@@ -191,7 +181,7 @@ module.exports = {
           content: "复制成功"
         }
       }
-    ]
+    ],
     // 菜单高亮
     [ 
       '@vuepress/active-header-links',
