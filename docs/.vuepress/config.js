@@ -2,8 +2,8 @@ const path = require('path')  //自定义样式里需要引入path
 const moment = require('moment');
 
 module.exports = {
-  title: "OrangeWind的博客",
-  description: '博客 学习 面试 生活',
+  title: "OrangeWind",
+  description: '博客 学习 生活',
   palette: path.resolve(__dirname, 'palette.styl'),   //palette.style就是styles里边的文件，此文件就是写的自定义主题样式
   theme: "reco",
   configureWebpack: {
@@ -28,33 +28,56 @@ module.exports = {
     logo: "/avatar.jpg",
     author: "orangeWind",
     authorAvatar: "/avatar.jpg",
-    // subSiderbar: "auto",
+    subSiderbar: "auto",
     // 搜索设置
     search: true,
     searchMaxSuggestions: 10,
     // 自动形成侧边导航
-    // sidebar: 'auto',
+    sidebar: 'auto',
     // 最后更新时间
     lastUpdated: '最后更新时间',
     nav: [
       { text: "首页", link: "/" },
       {
-        text: "OrangeWind 的博客",
+        text: "博客",
+        items: [
+          { text: '前端' },
+          { text: '算法' },
+        ],
+      },
+      {
+        text: "生活",
+        items: [
+          { text: '国漫',  icon: 'reco-document' },
+          { text: '旅游' },
+        ],
+      },
+      {
+        text: "关于",
         items: [
           { text: "掘金", link: "https://juejin.cn/user/4231342834844567" },
-          { text: "Github", link: "https://github.com/boy-fc" }
+          { text: "Github", link: "https://github.com/boy-fc" },
+          { text: "归档", link: "/timeline/" , icon: 'reco-date' }
         ]
       }
     ],
     // 博客配置
     blogConfig: {
       category: {
-        location: 2, // 在导航栏菜单中所占的位置，默认2
-        text: "博客", // 默认文案 “分类”
+        location: 2, 
+        text: "博客", 
+      },
+      category: {
+        location: 3, 
+        text: "生活", 
+      },
+      category: {
+        location: 4, 
+        text: "关于", 
       },
       tag: {
-        location: 4, // 在导航栏菜单中所占的位置，默认4
-        text: "Tag", // 默认文案 “标签”
+        location: 5, 
+        text: "标签",
       },
     },
     // 友情链接
