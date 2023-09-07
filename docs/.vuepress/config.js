@@ -36,49 +36,40 @@ module.exports = {
     sidebar: 'auto',
     // 最后更新时间
     lastUpdated: '最后更新时间',
+     // 自动设置分类
+     autoSetBlogCategories: true,
+     // 自动将分类和标签添加至头部导航条
+    autoAddCategoryToNavbar: {
+      location: 1, // 默认 0
+      categoryText: '分类', // 默认 categories
+      tagText: '标签' // 默认 tags
+    },
+    autoAddCategoryToNavbar: true,
     nav: [
       { text: "首页", link: "/" },
       {
-        text: "博客",
-        // items: [
-        //   { text: '前端' },
-        //   { text: '算法' },
-        // ],
-      },
-      {
         text: "生活",
-        // items: [
-        //   { text: '国漫',  icon: 'reco-document' },
-        //   { text: '旅游' },
-        // ],
-      },
-      {
-        text: "关于",
         items: [
-          { text: "掘金", link: "https://juejin.cn/user/4231342834844567" },
-          { text: "Github", link: "https://github.com/boy-fc" },
-          { text: "归档", link: "/timeline/" , icon: 'reco-date' }
-        ]
-      }
+          { text: '国漫',  icon: 'reco-document', link: "/lifeDiary/anime/" },
+          { text: '旅游', icon: 'reco-document', link: "/lifeDiary/tourism/" },
+        ],
+      },
+      { text: "更新日志", link: "/timeline/", icon: 'reco-date' },
     ],
     // 博客配置
     blogConfig: {
       category: {
         location: 2, 
-        text: "博客", 
-      },
-      category: {
-        location: 3, 
-        text: "生活", 
-      },
-      category: {
-        location: 4, 
-        text: "关于", 
+        text: "分类", 
       },
       tag: {
-        location: 5, 
+        location: 3, 
         text: "标签",
       },
+      socialLinks: [     // 信息栏展示社交信息
+      { icon: 'reco-github', link: 'https://github.com/boy-fc' },
+      { icon: 'reco-npm', link: 'https://juejin.cn/user/4231342834844567' }
+  ],
     },
     // 友情链接
     friendLink: [
