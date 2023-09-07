@@ -40,17 +40,17 @@ module.exports = {
       { text: "首页", link: "/" },
       {
         text: "博客",
-        items: [
-          { text: '前端' },
-          { text: '算法' },
-        ],
+        // items: [
+        //   { text: '前端' },
+        //   { text: '算法' },
+        // ],
       },
       {
         text: "生活",
-        items: [
-          { text: '国漫',  icon: 'reco-document' },
-          { text: '旅游' },
-        ],
+        // items: [
+        //   { text: '国漫',  icon: 'reco-document' },
+        //   { text: '旅游' },
+        // ],
       },
       {
         text: "关于",
