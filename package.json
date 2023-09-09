@@ -19,6 +19,7 @@
     "@vuepress/plugin-google-analytics": "^1.9.10",
     "@vuepress/plugin-last-updated": "^1.9.10",
     "@vuepress/plugin-pwa": "^1.9.10",
+    "markdown-it-anchor": "^8.6.7",
     "vuepress": "^1.9.10",
     "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-cursor-effects": "^1.1.6",

@@ -1,7 +1,7 @@
 ---
 title: Docker入门
 date: 2023-9-5
-# sidebar: 'auto'
+sidebar: 'auto'
 categories:
   - 前端
 tags:

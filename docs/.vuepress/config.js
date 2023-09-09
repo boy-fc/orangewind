@@ -1,5 +1,6 @@
 const path = require('path')  //自定义样式里需要引入path
 const moment = require('moment');
+const anchor = require('markdown-it-anchor')
 
 module.exports = {
   title: "OrangeWind",
@@ -21,12 +22,22 @@ module.exports = {
   },
   markdown: {
     lineNumbers: true, // 代码显示行号
-    anchor: { permalink: false },
+    // anchor: { permalink: false },
+    anchor: {
+      level: [1, 2, 3, 4, 5, 6],
+      permalink: anchor.permalink.ariaHidden({
+        class: 'header-anchor',
+        placement: 'before', //可设置为after
+        symbol: '#' //显示文字，可自行修改
+      }),
+    }
   },
   themeConfig: {
     type: "blog",
     logo: "/avatar.jpg",
     author: "orangeWind",
+		record: "xxxx", //备案信息
+    startYear: "2023", //开始年份
     authorAvatar: "/avatar.jpg",
     subSiderbar: "auto",
     // 搜索设置
@@ -36,6 +47,10 @@ module.exports = {
     sidebar: 'auto',
     // 最后更新时间
     lastUpdated: '最后更新时间',
+    // 下一篇
+    nextLinks: true,
+    // 上一篇
+    prevLinks: true,
      // 自动设置分类
      autoSetBlogCategories: true,
      // 自动将分类和标签添加至头部导航条
@@ -45,10 +60,12 @@ module.exports = {
       tagText: '标签' // 默认 tags
     },
     autoAddCategoryToNavbar: true,
+    // 顶部导航
     nav: [
-      { text: "首页", link: "/" },
+      { text: "首页", icon: "reco-home", link: "/" },
       {
         text: "生活",
+        icon: "reco-message",
         items: [
           { text: '国漫',  icon: 'reco-document', link: "/lifeDiary/anime/" },
           { text: '旅游', icon: 'reco-document', link: "/lifeDiary/tourism/" },
@@ -86,6 +103,21 @@ module.exports = {
         link: 'https://www.recoluan.com'
       }
     ],
+    // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
+    repo: 'https://github.com/boy-fc/orangewind',
+    // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
+    // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
+    repoLabel: '查看源码',
+    // 假如你的文档仓库和项目本身不在一个仓库：
+    docsRepo: 'https://github.com/boy-fc/orangewind/',
+    // 假如文档不是放在仓库的根目录下：
+    docsDir: 'docs',
+    // 假如文档放在一个特定的分支下：
+    docsBranch: 'main',
+    // 默认是 false, 设置为 true 来启用
+    editLinks: true,
+    // 默认为 "Edit this page"
+    // editLinkText: '帮助我们改善此页面！'
   },
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
@@ -96,7 +128,15 @@ module.exports = {
     ['link', { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon-152x152.png' }],
     ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+    ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+    // ['script', {}, `
+    //     var _hmt = _hmt || [];
+    //     (function() {
+    //       var hm = document.createElement("script");
+    //       hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxx"; 
+    //       var s = document.getElementsByTagName("script")[0]; 
+    //       s.parentNode.insertBefore(hm, s);
+    //     })();`]
   ],
   plugins: [
     // pwa 
