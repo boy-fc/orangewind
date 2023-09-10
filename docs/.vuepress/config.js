@@ -117,6 +117,15 @@ module.exports = {
     editLinks: true,
     // 默认为 "Edit this page"
     // editLinkText: '帮助我们改善此页面！'
+    activeHeaderLinks: true,
+    // 评论
+    valineConfig: {
+      appId: 'A1pyrc8cgOgZKvCv98QjoOd8-gzGzoHsz',
+      appKey: 'icB8m5Gqg8zsSwNtu4SPJ7TY', 
+      visitor: true, // 阅读量统计
+      highlight: true, // 代码高亮
+      placeholder: '借一片夏雨，滋润你灿烂的笑脸；捕一缕凉风，拂去你忙碌的疲倦；开一眼清泉，为你送快乐的甘甜。送一个清凉,愿你有凉爽的夏天！愿你天天开心，快乐！'
+    }
   },
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
@@ -128,14 +137,6 @@ module.exports = {
     ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
-    // ['script', {}, `
-    //     var _hmt = _hmt || [];
-    //     (function() {
-    //       var hm = document.createElement("script");
-    //       hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxx"; 
-    //       var s = document.getElementsByTagName("script")[0]; 
-    //       s.parentNode.insertBefore(hm, s);
-    //     })();`]
   ],
   plugins: [
     // pwa 
@@ -154,7 +155,7 @@ module.exports = {
       '@vuepress-reco/vuepress-plugin-kan-ban-niang',
       {
         theme: ['blackCat', 'whiteCat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi', 'shizuku', 'wanko', 'miku', 'z16'],
-        clean: false,
+        clean: true,
         info: 'https://github.com/mengqiuleo',
         messages: {
           welcome: '',
@@ -239,7 +240,7 @@ module.exports = {
       {
         'ga': 'UA-284409074-0' // UA-00000000-0 填上GAID
       }
-    ]
+    ],
     // 鼠标点击效果
     // [
     //   "cursor-effects",
