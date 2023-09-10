@@ -11,7 +11,7 @@ sticky: 1
 
 ## docker是什么
 
-![](/orangewind/images/docker.png)
+![](/images/docker.png)
 
 - docker是一个可以创建、管理**容器**的东西。可以理解为docker里面存放了许多**容器**。
 - **容器**就是一个精简版的linux系统，这个系统只有基本的环境供以使用，里面可以运行程序(可以是mysql，可以是nginx，可以是redis等)。
@@ -50,7 +50,7 @@ Docker 的主要用途，目前有三大类。
 
 ## docker的组成与架构
 
-![](/orangewind/images/dockerServer.png)
+![](/images/dockerServer.png)
 
 ### docker Engine
 
@@ -60,5 +60,5 @@ Docker 的主要用途，目前有三大类。
 2. `Client docker Cli`：命令行接口
 3. `REST API`：除了cli命令行接口，也可以通过`REST API`调用`docker`
 
-![](/orangewind/images/dockerEngine.png)
+![](/images/dockerEngine.png)
 
