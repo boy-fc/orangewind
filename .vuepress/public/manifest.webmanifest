@@ -1,0 +1,21 @@
+{
+  "name": "OrangeWind",
+  "short_name": "OrangeWind",
+  "description": "OrangeWind Blogs",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#3eaf7c",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    },
+    {
+      "src": "/logo.jpg",
+      "sizes": "384x384",
+      "type": "image/png"
+    }
+  ]
+}
