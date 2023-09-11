@@ -2,6 +2,10 @@ import { defineUserConfig } from "vuepress";
 import recoTheme from "vuepress-theme-reco";
 import { pwaPlugin } from "@vuepress/plugin-pwa";
 import { pwaPopupPlugin } from "@vuepress/plugin-pwa-popup";
+import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
+import { getDirname, path } from "@vuepress/utils";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   // 名称
@@ -16,6 +20,8 @@ export default defineUserConfig({
   cache: "bundler/.cache",
   // 发布到GitHub的仓库名称
   base: "/orangewind/",
+  port: 9090,
+  // head 头部
   head: [
     ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
     ["meta", { name: "theme-color", content: "#3eaf7c" }],
@@ -41,24 +47,32 @@ export default defineUserConfig({
     // 自动设置分类
     autoSetBlogCategories: true,
     // 自动将分类和标签添加至头部导航条
-    autoAddCategoryToNavbar: {
-      location: 1, // 默认 0
-      categoryText: "分类", // 默认 categories
-      tagText: "标签", // 默认 tags
-    },
+    // autoAddCategoryToNavbar: {
+    //   location: 1, // 默认 0
+    //   categoryText: "分类", // 默认 categories
+    //   tagText: "标签", // 默认 tags
+    // },
     // 头部导航
     navbar: [
-      { text: "首页", link: "/", icon: "reco-home" },
-      { text: "博客", link: "/posts/", icon: "reco-home" },
+      { text: "首页", link: "/", icon: "Home" },
+      { text: "博客", link: "/posts/", icon: "Report" },
+      { text: "分类", link: "/categories/qianduan/1/", icon: "Tag" },
+      { text: "标签", link: "/tags/Docker/1/", icon: "Version" },
       {
         text: "生活",
-        icon: "reco-message",
+        icon: "Gift",
         children: [
-          { text: "国漫", icon: "reco-document", link: "/lifeDiary/anime/" },
-          { text: "旅游", icon: "reco-document", link: "/lifeDiary/tourism/" },
+          {
+            text: "国漫",
+            link: "/lifeDiary/anime/",
+          },
+          {
+            text: "旅游",
+            link: "/lifeDiary/tourism/",
+          },
         ],
       },
-      { text: "更新日志", link: "/timeline/", icon: "reco-date" },
+      { text: "更新日志", link: "/timeline/", icon: "Account" },
     ],
     commentConfig: {
       type: "valine",
@@ -140,6 +154,8 @@ export default defineUserConfig({
         },
       },
     }),
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, "./components"),
+    }),
   ],
-  // debug: true,
 });

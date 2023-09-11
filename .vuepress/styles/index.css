@@ -12,3 +12,11 @@ h6,
 strong {
   color: #4954e6 ;
 }
+
+.back-to-top {
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  box-shadow:  0 1px 8px 0 rgba(0, 0, 0, 0.1);
+  mask: url('../public//MdRocket.svg') no-repeat;
+}
