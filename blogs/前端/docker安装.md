@@ -17,7 +17,7 @@ sticky: 1
 
 - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 
-![](/image/docker/dockerInstall.png)
+![](/images/docker/dockerInstall.png)
 
 安装完成后，通过桌面的快捷方式打开docker，提示：`Docker Desktop - WSL kernel version too low`
 
@@ -97,7 +97,7 @@ wsl --update
 
 首先进入这个链接：[cr.console.aliyun.com/](https://link.juejin.cn/?target=https%3A%2F%2Fcr.console.aliyun.com%2F) ，登录自己的阿里云账户，在左侧容器工具-镜像加速器中，复制自己的加速器地址：
 
-![](/images/docker/docker/dockerAli.png)
+![](/images/docker/dockerAli.png)
 
 然后进入Docker Engine选项卡，可见右侧JSON内容就是配置文件：
 
