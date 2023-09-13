@@ -11,8 +11,8 @@ bannerBrand:
   description: 工作 生活 记录 随笔 技术 前端 学习
   tagline: 一粒尘埃，在空气中凝结，最后生成磅礴的风雨；一粒沙石，在蚌体内打磨，最后结成昂贵的珍珠。有时候，渺小的开始，可以成就雄伟而宏大的事业；有时候，平凡的开始，可以走出崇高而伟大的人生
   buttons:
-    - { text: 引导, link: '/orangewind/posts/' }
-    - { text: 关于我, link: '/docs/aboutMe', type: 'plain' }
+    - { text: Welcome My Blogs, link: '/orangewind/posts/' }
+    - { text: 关于我, link: '/orangewind/docs/aboutMe', type: 'plain' }
   # socialLinks:
   #   - { icon: 'LogoGithub', link: 'https://github.com/vuepress-reco/vuepress-theme-reco' }
 blog:

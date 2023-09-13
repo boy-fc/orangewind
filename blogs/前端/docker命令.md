@@ -1,6 +1,6 @@
 ---
 title: Docker命令
-date: 2023-9-9
+date: 2023-9-12
 sidebar: 'auto'
 categories:
   - 前端
@@ -9,56 +9,391 @@ tags:
 sticky: 1
 ---
 
-## docker是什么
+## docker命令
 
-![](/images/docker.png)
+Docker可以让开发人员、运维人员更容易使用容器创建、部署和运行应用程序。掌握一些必备的Docker命令对于使用Docker的工程师非常重要。
 
-- docker是一个可以创建、管理**容器**的东西。可以理解为docker里面存放了许多**容器**。
-- **容器**就是一个精简版的linux系统，这个系统只有基本的环境供以使用，里面可以运行程序(可以是mysql，可以是nginx，可以是redis等)。
-- **容器**的创建是依赖于**镜像**的，**镜像**可以看作是一个模板，docker可以根据镜像生成一个容器实例，假如你需要一个**容器**中放入mysql，那么就去docker的**镜像**仓库拉取一个mysql**镜像**(可指定版本)，然后docker可以基于这个**镜像**创建一个mysql**容器**，这样就能在docker中运行使用一个只含有mysql的系统了。
-- **容器**的存在使我们可以方便做很多事情，比如项目需要mysql、nginx环境来运行，可以直接创建mysql和nginx**容器**供项目使用，不需要在服务器上下载、安装、配置这些环境，**容器**内部已经包含了这些必备的东西。同时**容器**还可以很方便的移植，比如我们需要切换服务器，这些项目正在使用的**容器**可以直接打包带走放在另一个服务器上。
+### 一、Docker 容器命令
 
+#### 列出所有正在运行的容器
 
+```shell
+docker ps
+```
 
-## docker的用途
+还有两个同等作用的命令：
 
-Docker 的主要用途，目前有三大类。
+- `docker container ps`
+- `docker container ls`
 
-1. **提供一次性的环境。**比如，本地测试他人的软件、持续集成的时候提供单元测试和构建的环境。
-2. **提供弹性的云服务。**因为 Docker 容器可以随开随关，很适合动态扩容和缩容。
-3. **组建微服务架构。**通过多个容器，一台机器可以跑多个服务，因此在本机就可以模拟出微服务架构。
+#### 列出所有容器（包含所有状态）
 
+```shell
+docker ps -a
+```
 
+`docker ps -a`中的`-a`是`-all`的缩写。
 
-## docker的基本概念
+#### 列出所有正在运行的容器（带文件大小）
 
-镜像(`Image`)、容器(`Container`)与仓库(`Repository`)，这三个是`docker`中最基本也是最核心的概念。
+```shell
+docker ps -s
+```
 
-### 镜像(Image)
+同等作用的命令：
 
-`Docker 把应用程序及其依赖，打包在 image 文件里面。`只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。
+- `docker container ls -s`
 
-### 容器(Container)
+`docker ps -s`中的`-s`是`-size`的缩写，代表了容器在其可写层中写入的数据的大小，virtual表示此容器的镜像使用的磁盘空间量。
 
-`image 文件生成的容器实例，本身也是一个文件，称为容器文件。`也就是说，一旦容器生成，就会同时存在两个文件： image 文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。
+#### 列出正在运行的容器的 ID
 
-### 仓库(Repository)
+```shell
+docker ps -q
+```
 
-`Docker Hub`就是Docker提供用于存储和分布镜像的官方`Docker Registry`，也是默认的`Registry`，其网址为`https://hub.docker.com`，前面我们使用`docker pull`命令便从`Docker Hub`上拉取镜像。
+同等作用的命令：
 
+- `docker container ls -q`
 
+`docker ps -q`中的`-q`是`-quiet`的缩写。
 
-## docker的组成与架构
+#### 列出所有容器的 ID（包含所有状态）
 
-![](/images/dockerServer.png)
+```shell
+docker ps -a -q
+```
 
-### docker Engine
+上面的`-a`和`-q`的参数可以合并：
 
-`docker server`为客户端提供了容器、镜像、数据卷、网络管理等功能，其实，这些功能都是由`Docker Engine`来实现的。
+```shell
+docker ps -aq
+```
 
-1. `dockerd`:服务器守护进程。
-2. `Client docker Cli`：命令行接口
-3. `REST API`：除了cli命令行接口，也可以通过`REST API`调用`docker`
+#### 过滤容器列表
 
-![](/images/dockerEngine.png)
+```shell
+docker ps -f name=un
+```
 
+`docker ps -f name=un`中的`-f`是`-filter`的缩写。
+
+根据状态过滤容器：
+
+```shell
+docker ps -a -f status=running
+```
+
+### 二、Docker创建容器
+
+#### 使用 Docker Image 创建一个新容器
+
+```shell
+docker create <image_name>
+```
+
+例如我们创建Nginx镜像：
+
+```shell
+docker create nginx
+```
+
+#### Docker Image 创建新容器带上名字
+
+```shell
+docker create --name <container_name> <image_name>
+```
+
+例如我们创建一个名为**nginx-container**的镜像：
+
+```shell
+docker create --name nginx-container nginx
+```
+
+然后我们可以用`docker ps -a`验证一下镜像是否已经创建。
+
+#### 三、Docker启动容器
+
+#### 启动 Docker 容器
+
+我们可以使用docker start容器 ID 或名称来使用命令：
+
+```shell
+docker start <container_id or container_name>
+```
+
+比如我们启动nginx：
+
+```shell
+docker start nginx-contianer
+```
+
+#### 停止正在运行的 Docker 容器
+
+和启动命令类似，我们可以使用docker stop 容器 ID 或名称来使用命令：
+
+```shell
+docker stop <container_id or container_name>
+```
+
+比如我们停止nginx：
+
+```shell
+docker stop nginx-container
+```
+
+#### 重启 Docker 容器
+
+和启动、停止命令类似，我们可以使用docker restart 容器 ID 或名称来使用命令：
+
+```shell
+docker restart <container_id or container_name>
+```
+
+#### 暂停正在运行的容器
+
+和启动、重启、停止命令类似，我们可以使用docker pause 容器 ID 或名称来使用命令：
+
+```shell
+docker pause <container_id or container_name>
+```
+
+比如我们暂停nginx：
+
+```shell
+docker pause nginx-container
+```
+
+取消暂停可以使用：
+
+```shell
+docker unpause <container_id or container_name>
+```
+
+比如我们取消暂停nginx：
+
+```shell
+docker unpause nginx-container
+```
+
+### 四、Docker 镜像命令
+
+#### 列出所有 Docker 镜像
+
+```shell
+docker images
+```
+
+#### 列出所有 Docker 镜像 ID
+
+```shell
+docker images -q
+```
+
+#### 构建 Docker 镜像
+
+```shell
+docker build -t <image_name> <contenxt_dir>
+```
+
+Docker 会尝试在 . 中找到一个名为的文件Dockerfile，context_dir然后它会使用该Dockerfile文件创建一个 Docker 映像。
+
+#### 构建 Docker 镜像并用标签区分
+
+```shell
+docker build . -t <image_name>:<tag or version>
+```
+
+#### 使用自定义命名的 Dockerfile 构建 Docker 映像
+
+```shell
+docker build -f <custom_docker_file_name> -t <image_name> .
+```
+
+#### 显示 Docker 映像的历史记录
+
+```shell
+docker history <imagename or imageid>
+```
+
+#### 重命名现有的 Docker 映像
+
+```SHELL
+docker tag <imagename> <newname>:<version>
+```
+
+#### 删除 Docker 镜像
+
+```shell
+docker rmi <image_name or image_id>
+```
+
+#### 强制删除 Docker 镜像
+
+```shell
+docker rmi -f <image_name or image_id>
+```
+
+### 五、Docker 日志
+
+#### 获取 Docker 容器的日志
+
+```shell
+docker container logs <container_id or container_name>
+```
+
+#### 监控 Docker 容器日志
+
+```shell
+docker container logs -f <container_id or container_name>
+```
+
+类似于Linux命令中的`tail -f`
+
+#### 获取容器日志的最后 n 行
+
+```shell
+docker container logs --tail n <container_id or container_name>
+```
+
+### 六、Docker 网络命令
+
+#### 列出所有网络
+
+```shell
+docker network ls
+```
+
+#### 创建网络
+
+```shell
+docker network create --driver <driver-name> <bridge-name>
+```
+
+#### 将 Docker 容器连接到网络
+
+```shell
+docker network connect <network_id or network_name> <container_id or container_name>
+```
+
+#### 断开 Docker 容器与网络的连接
+
+```shell
+docker network disconnect <network_name_or_id> <container_name_or_id>
+```
+
+#### 删除网络
+
+```shell
+docker network rm <network_id or network_name>
+```
+
+### 七、Docker 卷
+
+#### 列出卷
+
+```shell
+docker volume ls
+```
+
+#### 删除所有未使用的本地卷
+
+```4w
+docker volume prune
+```
+
+#### 卷的详细信息
+
+```shell
+[OPTIONS] VOLUME
+```
+
+### 八、Docker Compose命令
+
+#### 构建 docker compose 文件
+
+```shell
+docker-compose build
+```
+
+#### 运行 docker compose 文件
+
+```shell
+docker-compose up
+```
+
+#### 列出在 docker compose 文件中声明的 docker 镜像
+
+```shell
+docker-compose ls 
+```
+
+#### 启动已经使用 docker compose 文件创建的容器
+
+```shell
+docker-compose start
+```
+
+#### 在 docker-compose.yml 中运行其中一个应用程序
+
+```shell
+docker-compose run
+```
+
+#### 从 docker compose 中删除 docker 容器
+
+```shell
+docker-compose rm
+```
+
+#### 从 docker compose 检查 docker 容器状态
+
+```shell
+docker-compose ps
+```
+
+### 九、docker hub命令
+
+#### 在 docker hub 中搜索镜像
+
+```shell
+docker search search_word
+```
+
+#### 从 docker hub 下载镜像
+
+```shell
+docker pull user/image
+```
+
+#### 向 docker hub 进行身份验证
+
+```shell
+docker login
+```
+
+#### 将图像上传到 docker hub
+
+```shell
+docker push user/image
+```
+
+### 十、批量清除/删除
+
+#### 停止所有容器
+
+```shell
+docker stop -f $(docker ps -a -q)
+```
+
+#### 删除所有容器
+
+```shell
+docker rm -f $(docker ps -a -q)
+```
+
+#### 删除所有镜像
+
+```shell
+docker rmi -f $(docker images -q)
+```
