@@ -107,7 +107,7 @@ services:
  ...
 ```
 
-![](/images/docker/dockerCompose2.jpg)
+![](/images/docker/dockerCompose2.png)
 
 **即 project 包含 service ，service 包含 container**
 
