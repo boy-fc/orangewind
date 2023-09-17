@@ -23,9 +23,9 @@ sticky: 1
 
 ![](/images/docker/dockerError.png)
 
-#### 安装[WSL](https://so.csdn.net/so/search?q=WSL&spm=1001.2101.3001.7020)
+### 安装[WSL](https://so.csdn.net/so/search?q=WSL&spm=1001.2101.3001.7020)
 
-##### 手动安装
+#### 手动安装
 
 1、启用适用于 [Linux](https://so.csdn.net/so/search?q=Linux&spm=1001.2101.3001.7020) 的 Windows 子系统
 
@@ -64,7 +64,7 @@ wsl --update
 
 ![](/images/docker/dockerUpdate.png)
 
-##### 检查正常运转
+#### 检查正常运转
 
 - 查看桌面端：
 
@@ -80,7 +80,7 @@ wsl --update
 
 ### 二、docker设置
 
-#### 一些设置
+### 一些设置
 
 在`General`选项卡中，勾选下图第一个选项`Start Docker Desktop when you log in`，即可开机自启动，推荐打开开机自启动，这样一开机就可以访问我们一些容器的服务。
 
@@ -91,7 +91,7 @@ wsl --update
 - Send usage statistics 发送错误报告，**可以取消勾选**
 - Open Desktop Dashboard at startup 每次启动Docker就弹出主面板，**建议取消勾选**，需要用的时候再在任务栏打开更好
 
-#### 国内镜像源配置
+### 国内镜像源配置
 
 拉取镜像通常速度很慢，因为镜像仓库位于国外，这时我们配置一下阿里云加速即可。
 
@@ -113,7 +113,7 @@ wsl --update
 
 最后，点击右下角`Apply & restart`按钮即可保存配置。
 
-#### 修改镜像和容器的存放位置
+### 修改镜像和容器的存放位置
 
 Docker Desktop默认情况下只能安装在C盘，并且其**镜像和容器也是以vhdx虚拟磁盘映像的形式存放在C盘的**，随着镜像和容器的数量增加，C盘的空间也会越来越不够用。
 
@@ -123,7 +123,7 @@ Docker Desktop默认情况下只能安装在C盘，并且其**镜像和容器也
 
 ![](/images/docker/dockerSetting3.png)
 
-#### 彻底清空所有镜像和容器数据
+### 彻底清空所有镜像和容器数据
 
 大家如果使用了很长时间的Docker Desktop会发现，即使删除了所有的镜像和容器，Docker的数据映像仍然会占用很大的空间，这是因为使用过程中产生的数据缓存仍然会存放在Docker Desktop的数据映像中无法删除。
 
@@ -142,6 +142,6 @@ wsl --unregister docker-desktop
 
 显示注销成功，则说明清除完成！这样所有的Docker数据就被彻底删除了！
 
-#### 使用
+### 使用
 
 到此，我们就可以正常使用Docker了！打开命令行或者`cmd`，即可在里面使用`docker`命令。

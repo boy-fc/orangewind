@@ -176,6 +176,36 @@ docker unpause <container_id or container_name>
 docker unpause nginx-container
 ```
 
+#### 删除一个正在运行的容器
+
+分为两个步骤：首先停止容器，然后才能删除容器。
+
+1、先执行停止容器
+
+```shell
+docker stop <container_id or container_name>
+```
+
+2、删除指定的容器
+
+```shell
+docker rm -f <container_id or container_name>
+```
+
+#### 删除所有容器
+
+```shell
+docker stop ${docker ps -aq}
+```
+
+该命令将强制删除所有容器，包括正在运行的容器。其中，$() 内的命令 docker ps -aq 将返回所有容器的 ID。我们可以利用这些 ID 来删除所有容器。
+
+#### 删除所有异常停止的容器
+
+```shell
+docker ps -a | grep "Exited" | awk '{print $1}' | xargs docker rm
+```
+
 ### 四、Docker 镜像命令
 
 #### 列出所有 Docker 镜像
