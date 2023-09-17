@@ -56,7 +56,7 @@ export default defineUserConfig({
     navbar: [
       { text: "首页", link: "/", icon: "Home" },
       { text: "博客", link: "/posts/", icon: "Report" },
-      { text: "分类", link: "/categories/qianduan/1/", icon: "Tag" },
+      { text: "分类", link: "/categories/Docker/1/", icon: "Tag" },
       { text: "标签", link: "/tags/Docker/1/", icon: "Version" },
       {
         text: "生活",

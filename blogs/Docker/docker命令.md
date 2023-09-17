@@ -112,7 +112,7 @@ docker create --name nginx-container nginx
 
 然后我们可以用`docker ps -a`验证一下镜像是否已经创建。
 
-#### 三、Docker启动容器
+### 三、Docker启动容器
 
 #### 启动 Docker 容器
 
@@ -175,6 +175,26 @@ docker unpause <container_id or container_name>
 ```shell
 docker unpause nginx-container
 ```
+
+#### 进入Docker容器
+
+使用docker exec命令可以在运行中的容器中启动一个新进程，进入容器后可以在容器内执行命令，查看日志、修改配置等。
+
+```shell
+# 进入Docker容器
+docker exec -it my-container /bin/bash
+```
+
+其中，-it表示以交互模式启动新进程，/bin/bash表示要进入容器内执行的命令。
+
+#### 退出Docker容器
+
+```shell
+# 退出Docker容器
+exit
+```
+
+可以使用exit命令或者按下Ctrl+D组合键。exit命令会释放已使用的终端并正常退出容器。
 
 #### 删除一个正在运行的容器
 
