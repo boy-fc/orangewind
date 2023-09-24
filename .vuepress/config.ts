@@ -24,7 +24,7 @@ export default defineUserConfig({
   // head 头部
   head: [
     ["link", { rel: "manifest", href: "/orangewind/manifest.webmanifest" }],
-    ["meta", { name: "theme-color", content: "#3eaf7c" }],
+    ["meta", { name: "theme-color", content: "#e8eaed" }],
   ],
   // 主题配置
   theme: recoTheme({
