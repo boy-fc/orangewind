@@ -47,7 +47,7 @@ server {
 
 ### 实现负载均衡的策略
 
-![](.images/nginx/nginxFzjh1.png)
+![](/images/nginx/nginxFzjh1.png)
 
 #### **轮询策略**
 
@@ -61,7 +61,7 @@ upstream balanceServer {
 }
 ```
 
-![](.images/nginx/nginxFzjh2.png)
+![](/images/nginx/nginxFzjh2.png)
 
 #### **最小连接数策略**
 
@@ -76,7 +76,7 @@ upstream balanceServer {
 }
 ```
 
-![](/images/nnginx/nginxFzjh3.png)
+![](/images/nginx/nginxFzjh3.png)
 
 #### **最快响应时间策略**
 

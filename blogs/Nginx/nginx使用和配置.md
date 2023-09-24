@@ -278,7 +278,7 @@ server {
 
 启用`gzip`同时需要客户端和服务端的支持，如果客户端支持`gzip`的解析，那么只要服务端能够返回`gzip`的文件就可以启用`gzip`了,我们可以通过`nginx`的配置来让服务端支持`gzip`。下面的`respone`中`content-encoding:gzip`，指服务端开启了`gzip`的压缩方式。
 
-![](.images/nginx/nginxConfig3.png)
+![](/images/nginx/nginxConfig3.png)
 
 ```nginx
   gzip                    on;
