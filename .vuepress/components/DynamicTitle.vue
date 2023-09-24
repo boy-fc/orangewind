@@ -57,13 +57,13 @@ export default {
     },
   },
   watch: {
-    $route(to, from) {
-      if (to.path !== from.path) {
-        this.originTitle = document.title;
-        console.log(this.originTitle);
-        clearTimeout(this.recoverTimeout);
-      }
-    },
+    // $route(to, from) {
+    //   if (to.path !== from.path) {
+    //     this.originTitle = document.title;
+    //     console.log(this.originTitle);
+    //     clearTimeout(this.recoverTimeout);
+    //   }
+    // },
   },
 };
 </script>

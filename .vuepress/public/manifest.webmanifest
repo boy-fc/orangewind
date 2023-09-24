@@ -8,19 +8,19 @@
   "theme_color": "#3eaf7c",
   "icons": [
     {
-      "src": "/logo.jpg",
+      "src": "/orangewind/pwa144x144.png",
       "sizes": "144x144",
-      "type": "image/jpg"
-    },
-    {
-      "src": "/logo.jpg",
-      "sizes": "192x192",
-      "type": "image/jpg"
-    },
-    {
-      "src": "/logo.jpg",
-      "sizes": "466x466",
       "type": "image/png"
+    },
+    {
+      "src": "/orangewind/pwa192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/orangewind/pwa466x466.jpg",
+      "sizes": "466x466",
+      "type": "image/jpg"
     }
   ]
 }

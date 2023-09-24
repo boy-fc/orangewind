@@ -23,7 +23,7 @@ export default defineUserConfig({
   port: 9090,
   // head 头部
   head: [
-    ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
+    ["link", { rel: "manifest", href: "/orangewind/manifest.webmanifest" }],
     ["meta", { name: "theme-color", content: "#3eaf7c" }],
   ],
   // 主题配置
