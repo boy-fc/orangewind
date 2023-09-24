@@ -2,7 +2,7 @@
   "name": "orangeWind",
   "short_name": "orangeWind",
   "description": "OrangeWind Blogs",
-  "start_url": "/index.html",
+  "start_url": "/orangewind",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#e8eaed",
