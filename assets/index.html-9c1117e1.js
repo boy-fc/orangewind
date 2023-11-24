@@ -1,0 +1,1 @@
+import{_ as n,r as t,o,c,a,b as r}from"./app-e09b6429.js";const s={};function _(l,m){const e=t("DynamicTitle");return o(),c("div",null,[a(" 动态标题 "),r(e)])}const d=n(s,[["render",_],["__file","index.html.vue"]]);export{d as default};

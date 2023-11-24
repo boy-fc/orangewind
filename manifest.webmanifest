@@ -1,0 +1,26 @@
+{
+  "name": "orangeWind",
+  "short_name": "orangeWind",
+  "description": "OrangeWind Blogs",
+  "start_url": "/orangewind",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#e8eaed",
+  "icons": [
+    {
+      "src": "/orangewind/pwa144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/orangewind/pwa192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/orangewind/pwa466x466.jpg",
+      "sizes": "466x466",
+      "type": "image/jpg"
+    }
+  ]
+}
